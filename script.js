@@ -18,11 +18,14 @@ var people = [{"id":1,"name":"George"},{"id":2,"name":"John"}];
     // }
     // 
 
-$("#but").click(function() {
+$("#show_button").click(function() {
     for(var person in people){
-        $(document.body).append('<p> ID = ' + people[person].id + ' Name = ' + people[person].name + '</p>');
-        //console.log("<p> ID = " + people[person].id + " Name = " + people[person].name + "</p>");
+        $("#show_place").append('<p> ID = ' + people[person].id + ' Name = ' + people[person].name + '</p>');
     }
+});
+
+$("#remove_button").click(function(){
+     $("#show_place").empty();
 });
     
 
