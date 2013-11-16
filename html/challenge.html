@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form>
+
+Challenge Name: <input type="text" name="Cname"><br>
+
+
+Difficulty: <input type="range" id="diffInput" name="difficulty" min="1" max="10" onchange="showValue(this.value)"/>
+<span id="diffInput">6</span><br>
+
+
+
+<!--<output name="amountDiff"
+	for="diffInput">6</output><br> -->
+
+Priority: <input type="range" id="prioInput" name="priority" min="1" max="10" onchange="showValue(this.value)"/>
+<span id="prioInput">6</span>
+</form>
+
+
+<script type="text/javascript">
+function showValue(newValue)
+{
+	document.getElementById("range").innerHTML=newValue;
+}
+</script>
+
+
+</body>
+</html>
