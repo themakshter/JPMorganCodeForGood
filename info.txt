@@ -1,0 +1,14 @@
+Host: 
+http://ec2-54-228-102-66.eu-west-1.compute.amazonaws.com/
+
+Ftp:
+ec2-54-228-102-66.eu-west-1.compute.amazonaws.com/
+webuser
+bitnami
+
+filepath: /opt/bitnami/apache2/htdocs
+
+PhpMyAdmin:
+http://ec2-54-228-102-66.eu-west-1.compute.amazonaws.com/phpmyadmin/
+root
+bitnami
