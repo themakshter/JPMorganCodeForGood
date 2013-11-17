@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form>
-
-Challenge Name: <input type="text" name="Cname"><br>
+<a href="Index.html">Home</a>
 
 
-Difficulty: <input type="range" id="diffInput" name="difficulty" min="1" max="10" onchange="showValue(this.value)"/>
-<span id="range">6</span><br>
+<div id="root" style="display: none">
 
+	<input type="button" value="Remove challenge"
+		onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
 
+	<input type="text" name="cName" />
 
-<!-- TODO: Fix the slider values -->
-Priority: <input type="range" id="prioInput" name="priority" min="1" max="10" onchange="showValue(this.value)"/>
-<span id="range">6</span>
+	<select name="rankingDiff">
+		<option>Difficulty</option>
+		<option value="diffFive">5</option>
+		<option value="diffFour">4</option>
+		<option value="diffThree">3</option>
+		<option value="diffTwo">2</option>
+		<option value="diffOne">1</option>
+	</select>
+
+	<select name="rankingPrio">
+		<option>Priority</option>
+		<option value="diffFive">5</option>
+		<option value="diffFour">4</option>
+		<option value="diffThree">3</option>
+		<option value="diffTwo">2</option>
+		<option value="diffOne">1</option>
+	</select><br /><br />
+
+</div>
+
+<form method="post" action="/cgi-bin/show_params.cgi">
+
+	<span id="writeroot"></span>
+
+	<input type="submit" value="Send Form" /> <br /><br />
+
+	<input type="button" id="addChallenge" value="Add A Challenge" 
+	onclick="moreFields();"/>
+
 </form>
 
 
 <script type="text/javascript">
-function showValue(newValue)
-{
-	document.getElementById("range").innerHTML=newValue;
-}
-</script>
 
+var counter = 0;
+
+function moreFields() {
+	counter++;
+	var newFields = document.getElementById('root').cloneNode(true);
+	newFields.id = '';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName + counter;
+	}
+	var insertHere = document.getElementById('writeroot');
+	insertHere.parentNode.insertBefore(newFields,insertHere);
+}
+
+window.onload = moreFields;
+
+
+</script>
 
 </body>
 </html>
