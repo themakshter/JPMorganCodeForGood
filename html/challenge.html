@@ -39,6 +39,24 @@
 
 	<input type="button" id="addChallenge" value="Add A Challenge" 
 	onclick="moreFields();"/>
+                <option>Priority</option>
+                <option value="diffFive">5</option>
+                <option value="diffFour">4</option>
+                <option value="diffThree">3</option>
+                <option value="diffTwo">2</option>
+                <option value="diffOne">1</option>
+        </select><br /><br />
+
+</div>
+
+<form method="post" action="/cgi-bin/show_params.cgi">
+
+        <span id="writeroot"></span>
+
+        <input type="submit" value="Send Form" /> <br /><br />
+
+        <input type="button" id="addChallenge" value="Add A Challenge" 
+        onclick="moreFields();"/>
 
 </form>
 
@@ -60,6 +78,7 @@ function moreFields() {
 	}
 	var insertHere = document.getElementById('writeroot');
 	insertHere.parentNode.insertBefore(newFields,insertHere);
+        insertHere.parentNode.insertBefore(newFields,insertHere);
 }
 
 window.onload = moreFields;
